@@ -1,0 +1,16 @@
+version: '3'
+networks:
+  sample-python-network:
+    name: sample-python-network
+services:
+  workspace:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ..:/home/vscode/workspaces/sample-python/
+      - ../.vscode-server:/root/.vscode-server
+    tty: true # <- keeps container running
+    networks:
+      - sample-python-network

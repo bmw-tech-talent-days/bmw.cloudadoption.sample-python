@@ -1,0 +1,27 @@
+{
+	"name": "sample-python-dev-env",
+	"dockerComposeFile": [
+		"docker-compose.workspace.yml"
+	],
+	"service": "workspace",
+	"workspaceFolder": "/home/vscode/workspaces/sample-python/",
+	"containerEnv": {
+		"PIPENV_VENV_IN_PROJECT": "1",
+		"PYTHONPATH": ".",
+		"PHRASE": "I LOVE THE BMW IT HUB TECH TALENT DAY!!!"
+	},
+	"postCreateCommand": "pipenv install --dev --deploy",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"python.formatting.provider": "black",
+				"editor.formatOnSave": true,
+				"python.defaultInterpreterPath": ".venv/bin/python"
+			},
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance"
+			]
+		}
+	}
+}
